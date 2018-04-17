@@ -11,17 +11,8 @@ import Personal from '../screens/Personal';
 import PersonalMap from '../screens/PersonalMap';
 import Specialty from '../screens/Specialty';
 import SpecialtyMap from '../screens/SpecialtyMap';
-import Settings from '../screens/Settings';
 import Details from '../screens/Details';
 
-export const SettingsStack = StackNavigator({
-  Settings: {
-    screen: Settings,
-    navigationOptions: {
-      header: null
-    },
-  },
-});
 export const FoodStack = StackNavigator({
   Food: {
     screen: Food,
@@ -39,6 +30,9 @@ export const FoodStack = StackNavigator({
     screen: Details,
     navigationOptions: {
       title: 'Back to Food Deals',
+      headerStyle: {
+        marginTop: -20,
+      }
     }
   }
 });
@@ -58,7 +52,10 @@ export const BarsStack = StackNavigator({
   BarDetails: {
     screen: Details,
     navigationOptions: {
-      title: 'Back to Bar and Night Life Deals',
+      title: 'Back to Bar Deals',
+      headerStyle: {
+        marginTop: -20,
+      }
     }
   }
 });
@@ -79,6 +76,9 @@ export const ShopStack = StackNavigator({
     screen: Details,
     navigationOptions: {
       title: 'Back to Shopping Deals',
+      headerStyle: {
+        marginTop: -20,
+      }
     }
   }
 });
@@ -98,7 +98,10 @@ export const CoffeeStack = StackNavigator({
   CoffeeDetails: {
     screen: Details,
     navigationOptions: {
-      title: 'Back to Coffee and Tea Deals',
+      title: 'Back to Coffee Deals',
+      headerStyle: {
+        marginTop: -20,
+      }
     }
   }
 });
@@ -118,7 +121,10 @@ export const PersonalStack = StackNavigator({
   PersonalDetails: {
     screen: Details,
     navigationOptions: {
-      title: 'Back to Salon and Personal Care Deals',
+      title: 'Back to Personal Care Deals',
+      headerStyle: {
+        marginTop: -20,
+      }
     }
   }
 });
@@ -138,7 +144,10 @@ export const SpecialtyStack = StackNavigator({
   SpecialtyDetails: {
     screen: Details,
     navigationOptions: {
-      title: 'Back to Speciality Store Deals',
+      title: 'Back to Speciality Deals',
+      headerStyle: {
+        marginTop: -20,
+      }
     }
   }
 });
@@ -179,13 +188,7 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'Speciality',
     },
-  },
-  Settings: {
-    screen: SettingsStack,
-    navigationOptions: {
-      tabBarLabel: 'Location',
-    },
-  },
+  }
 }, {
   ...TabNavigator.Presets.AndroidTopTabs,
   navigationOptions: {

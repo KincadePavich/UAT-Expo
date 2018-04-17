@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "UniversityAroundTown",
-    "description": "This project is really great.",
-    "slug": "UniversityAroundTown",
+    "name": "UAT",
+    "description": "The fastest growing local community/university network site in the country.",
+    "slug": "uat",
     "privacy": "public",
     "sdkVersion": "26.0.0",
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/AppIcon.jpg",
+    "icon": "http://universityaroundtown.com/wp-content/uploads/2018/04/AppIcon.png",
     "splash": {
-      "image": "./assets/Splash.jpg",
+      "image": "http://universityaroundtown.com/wp-content/uploads/2018/04/Splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff",
     },
@@ -21,7 +21,19 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.conceptdesignstudios.uat",
+      "supportsTablet": true,
+      "buildNumber": "1.0.0",
+    },
+    "android": {
+      "package": "conceptdesignstudios.uat",
+      "versionCode": 1,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCWg-vbHZzcRzEsme9UJZ53UEQgxEot5ls"
+        }
+      }
     }
+
   }
 }

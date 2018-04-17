@@ -8,4 +8,6 @@ if (global.school === 'MONTANA STATE UNIVERSITY') {
   global.personal = 'http://universityaroundtown.com/wp-json/wp/v2/sld/508';
   global.specialty = 'http://universityaroundtown.com/wp-json/wp/v2/sld/506';
   global.ads = 'http://universityaroundtown.com/wp-json/wp/v2/ads?_embed';
+  global.lat = 45.6792884;
+  global.long = -111.03874719999999;
 }

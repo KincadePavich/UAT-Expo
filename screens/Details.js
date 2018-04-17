@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import { ScrollView, Text, Image, TouchableOpacity, Linking, Platform } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
 class Details extends Component {
@@ -23,8 +23,8 @@ class Details extends Component {
         </TouchableOpacity>
         <MapView
           initialRegion={{
-            latitude: qcopd_item_lat,
-            longitude: qcopd_item_long,
+            latitude: Platform.OS === 'ios' ? qcopd_item_lat : 45.6770,
+            longitude: Platform.OS === 'ios' ? qcopd_item_long : -111.0429,
             latitudeDelta: 0.05,
             longitudeDelta: 0.05,
           }}
@@ -37,7 +37,7 @@ class Details extends Component {
             longitude: parseFloat(qcopd_item_long),
           }}
           title={qcopd_item_title}
-          description={qcopd_item_subtitle}
+          description='10% Off Any Purchase'
         />
         </MapView>
       </ScrollView>
@@ -64,8 +64,8 @@ const styles = {
     paddingRight: 20
   },
   logoStyle: {
-    width: 100,
-    height: 100,
+    width: 70,
+    height: 70,
     alignSelf: 'center',
     resizeMode: 'contain'
   },

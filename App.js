@@ -1,41 +1,22 @@
 import React, { Component } from 'react';
-import { View, Image, Text, Linking, TouchableOpacity, AsyncStorage, Platform } from 'react-native';
+import { View, Image, Text, Linking, TouchableOpacity } from 'react-native';
 import { Root } from './config/router';
 import './global.js';
 
 console.disableYellowBox = true;
 
 class App extends Component {
-  state = { school: Object, loaded: false };
-  componentWillMount() {
-    this.retrieveItem('schoolObj').then((current) => {
-      this.setState({ school: current, loaded: true });
-    }).catch((error) => {
-      console.log('Unable to retrieve data: ' + error);
-    });
-  }
-  async retrieveItem(key) {
-    try {
-      const schoolItem = await AsyncStorage.getItem(key);
-      const item = JSON.parse(schoolItem);
-      return item;
-    } catch (error) {
-      console.log(error.message);
-    }
-    return;
-  }
+  state = { loaded: false };
   render() {
     return (
-      <View style={{ flex: 1, marginTop: Platform.OS === 'ios' ? 20 : 0 }}>
+      <View style={{ flex: 1, borderTopWidth: 20, borderTopColor: '#fff' }}>
         <Image style={styles.logoStyle} source={require('./media/UAT.png')} />
-        { this.state.loaded &&
-          <TouchableOpacity onPress={() => Linking.openURL(this.state.school.site)}>
-            <Text style={styles.headingStyle}>
-                {Object.values(this.state.school.name)}
-            </Text>
-          </TouchableOpacity>
-        }
-        <Root screenProps={this.state.school} />
+        <TouchableOpacity onPress={() => Linking.openURL(global.school.site)}>
+          <Text style={styles.headingStyle}>
+            {Object.values(global.school)}
+          </Text>
+        </TouchableOpacity>
+        <Root />
       </View>
     );
   }

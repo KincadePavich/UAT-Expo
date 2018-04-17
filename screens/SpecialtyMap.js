@@ -63,10 +63,10 @@ class SpecialityMap extends Component {
         <ScrollView style={{ marginBottom: 40, marginTop: -22 }}>
           <MapView
             initialRegion={{
-              latitude: 45.6770,
-              longitude: -111.0429,
-              latitudeDelta: 0.05,
-              longitudeDelta: 0.05,
+              latitude: global.lat,
+              longitude: global.long,
+              latitudeDelta: 0.08,
+              longitudeDelta: 0.08,
             }}
             style={styles.mapStyle}
           >

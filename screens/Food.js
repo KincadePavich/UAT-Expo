@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View, TouchableOpacity, AsyncStorage } from 'react-native';
+import { ScrollView, View, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { List, ListItem } from 'react-native-elements';
 import { Button } from '../components/Button';
@@ -9,28 +9,14 @@ import { Spinner } from '../components/Spinner';
 class Foods extends Component {
   state = { items: [], loaded: false };
   componentWillMount() {
-    this.retrieveItem('schoolObj').then((school) => {
-      axios.get(school.food)
-      .then(response => this.setState({ items: response.data, loaded: true }));
-    }).catch((error) => {
-      console.log('Unable to retrieve data: ' + error);
-    });
-  }
+     axios.get(global.food)
+     .then(response => this.setState({ items: response.data, loaded: true }));
+   }
   onPress = () => {
     this.props.navigation.navigate('FoodMap');
   }
   onPressItem = (item) => {
     this.props.navigation.navigate('FoodDetails', { ...item });
-  }
-  async retrieveItem(key) {
-    try {
-      const schoolItem = await AsyncStorage.getItem(key);
-      const item = JSON.parse(schoolItem);
-      return item;
-    } catch (error) {
-      console.log(error.message);
-    }
-    return;
   }
   renderList() {
     return (Object.values(this.state.items.protected_fields).map(item => (
