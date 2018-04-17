@@ -24,6 +24,9 @@
       "bundleIdentifier": "com.conceptdesignstudios.uat",
       "supportsTablet": true,
       "buildNumber": "1.0.0",
+      "config": {
+        "googleMapsapiKey": "AIzaSyCWg-vbHZzcRzEsme9UJZ53UEQgxEot5ls"
+      }
     },
     "android": {
       "package": "conceptdesignstudios.uat",
