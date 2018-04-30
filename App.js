@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
-import { View, Image, Text, Linking, TouchableOpacity } from 'react-native';
+import { View, Image, Text, Linking, TouchableOpacity, StatusBar } from 'react-native';
 import { Root } from './config/router';
 import './global.js';
 
 console.disableYellowBox = true;
 
 class App extends Component {
-  state = { loaded: false };
   render() {
     return (
-      <View style={{ flex: 1, borderTopWidth: 20, borderTopColor: '#fff' }}>
-        <Image style={styles.logoStyle} source={require('./media/UAT.png')} />
-        <TouchableOpacity onPress={() => Linking.openURL(global.school.site)}>
-          <Text style={styles.headingStyle}>
-            {Object.values(global.school)}
-          </Text>
-        </TouchableOpacity>
+      <View style={{ flex: 1 }}>
+        <StatusBar
+          barStyle="light-content"
+          hidden
+        />
+        <View style={styles.headerStyle}>
+          <Image style={styles.logoStyle} source={require('./media/UAT.png')} />
+          <TouchableOpacity onPress={() => Linking.openURL(global.site)}>
+            <Text style={styles.headingStyle}>
+              {Object.values(global.school)}
+            </Text>
+          </TouchableOpacity>
+        </View>
         <Root />
       </View>
     );
@@ -32,9 +37,14 @@ const styles = {
   headingStyle: {
     alignSelf: 'center',
     fontSize: 18,
-    color: '#000',
+    color: '#002469',
     paddingBottom: 15,
     textDecorationLine: 'underline',
+  },
+  headerStyle: {
+    backgroundColor: '#fff',
+    borderBottomWidth: 2,
+    borderBottomColor: '#eeec24'
   }
 };
 

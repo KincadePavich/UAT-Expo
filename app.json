@@ -8,7 +8,7 @@
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "http://universityaroundtown.com/wp-content/uploads/2018/04/AppIcon.png",
+    "icon": "http://universityaroundtown.com/wp-content/uploads/2018/04/AppIcon3.png",
     "splash": {
       "image": "http://universityaroundtown.com/wp-content/uploads/2018/04/Splash.png",
       "resizeMode": "contain",
@@ -25,7 +25,7 @@
       "supportsTablet": true,
       "buildNumber": "1.0.0",
       "config": {
-        "googleMapsapiKey": "AIzaSyCWg-vbHZzcRzEsme9UJZ53UEQgxEot5ls"
+        "googleMapsApiKey": "AIzaSyCWg-vbHZzcRzEsme9UJZ53UEQgxEot5ls"
       }
     },
     "android": {

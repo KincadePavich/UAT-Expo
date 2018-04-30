@@ -18,7 +18,7 @@ class Ads extends Component {
     this.getAds();
     const index = Math.floor(Math.random() * this.state.adURLs.length);
     return (
-      <TouchableHighlight style={{ bottom: 43 }} onPress={() => Linking.openURL(this.state.adLinks[index])}>
+      <TouchableHighlight style={{ bottom: 42 }} onPress={() => Linking.openURL(this.state.adLinks[index])}>
         <Image
           source={{ uri: this.state.adURLs[index] }}
           style={{ aspectRatio: 4 / 1, width: Dimensions.get('window').width }}
