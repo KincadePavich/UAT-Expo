@@ -47,7 +47,7 @@ class CoffeeMap extends Component {
           longitude: parseFloat(Object.values(item)[5]),
         }}
         title={Object.values(item)[0]}
-        description={Object.values(item)[2]}
+        description={'10% Off Any Purchase'}
       />
     )));
   }
