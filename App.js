@@ -39,7 +39,7 @@ const styles = {
     fontSize: 18,
     color: '#002469',
     paddingBottom: 15,
-    textDecorationLine: 'underline',
+    textDecorationLine: 'none',
   },
   headerStyle: {
     backgroundColor: '#fff',
